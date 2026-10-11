@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block titulo %}Sorteos · Juegos de azar{% endblock %}
+
+{% block contenido %}
+<section class="juego" id="juego-ruleta">
+    <h2>Ruleta</h2>
+    <p>Tira de la ruleta europea (0-36) y descubre el número y su color.</p>
+    <button class="boton" data-accion="ruleta">Girar ruleta</button>
+    <div class="resultado" data-resultado="ruleta" aria-live="polite">
+        <span class="placeholder">Pulsa "Girar ruleta" para empezar.</span>
+    </div>
+</section>
+
+<section class="juego" id="juego-dados">
+    <h2>Dados</h2>
+    <p>Elige cuántos dados tirar y cuántas caras tiene cada uno.</p>
+    <div class="controles">
+        <label>
+            Dados
+            <input type="number" data-campo="cantidad" value="2" min="1" max="10">
+        </label>
+        <label>
+            Caras
+            <input type="number" data-campo="caras" value="6" min="2" max="100">
+        </label>
+    </div>
+    <button class="boton" data-accion="dados">Tirar dados</button>
+    <div class="resultado" data-resultado="dados" aria-live="polite">
+        <span class="placeholder">Pulsa "Tirar dados" para empezar.</span>
+    </div>
+</section>
+
+<section class="juego" id="juego-moneda">
+    <h2>Cara o Cruz</h2>
+    <p>Lanza una moneda al aire y mira qué lado cae.</p>
+    <button class="boton" data-accion="moneda">Lanzar moneda</button>
+    <div class="resultado" data-resultado="moneda" aria-live="polite">
+        <span class="placeholder">Pulsa "Lanzar moneda" para empezar.</span>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

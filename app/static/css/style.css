@@ -1,0 +1,192 @@
+:root {
+    --fondo: #10151f;
+    --tarjeta: #1b2333;
+    --texto: #e8edf5;
+    --suave: #9aa7bd;
+    --acento: #4f8cff;
+    --rojo: #e5484d;
+    --negro: #2b2f3a;
+    --verde: #2fbf71;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top, #1a2333, var(--fondo));
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera {
+    text-align: center;
+    padding: 2.5rem 1rem 1rem;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 2.4rem;
+}
+
+.subtitulo {
+    color: var(--suave);
+    margin-top: 0.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.contenedor {
+    flex: 1;
+    width: min(1000px, 92%);
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding-bottom: 2rem;
+}
+
+.juego {
+    background: var(--tarjeta);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.juego h2 {
+    margin: 0;
+}
+
+.juego p {
+    margin: 0;
+    color: var(--suave);
+    font-size: 0.95rem;
+}
+
+.controles {
+    display: flex;
+    gap: 1rem;
+}
+
+.controles label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--suave);
+    flex: 1;
+}
+
+.controles input {
+    background: #0e1421;
+    border: 1px solid #2c364a;
+    color: var(--texto);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.boton {
+    background: var(--acento);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.boton:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.boton:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+
+.resultado {
+    margin-top: auto;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    background: #0e1421;
+    padding: 0.75rem;
+    transition: background 0.2s ease;
+}
+
+.resultado .placeholder {
+    color: var(--suave);
+    font-size: 0.9rem;
+}
+
+.resultado .destaque {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.resultado .detalle {
+    color: var(--suave);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge.rojo { background: var(--rojo); }
+.badge.negro { background: var(--negro); }
+.badge.verde { background: var(--verde); color: #06301b; }
+
+.dados-pista {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.4rem;
+}
+
+.dado {
+    background: #fff;
+    color: #10151f;
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-width: 2rem;
+}
+
+.error {
+    color: var(--rojo);
+}
+
+.pie {
+    text-align: center;
+    color: var(--suave);
+    font-size: 0.8rem;
+    padding: 1rem;
+}
